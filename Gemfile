@@ -27,4 +27,5 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3.6'
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'

@@ -1,6 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('malimali'),
+    access_key_id: ENV.fetch('AKIAJ7IEZ74QUWZKGEQA'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('AWS_REGION'),
+  }
+}
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
