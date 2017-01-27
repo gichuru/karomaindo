@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-md-3">
 		<div class="thumbnail">
-			<%= image_tag @listing.image.url %></div>
+			<%= image_tag @listing.image.url(:medium) %></div>
 		</div>
 	<div class="col-md-3"><%= @listing.name %><br>
 		<strong ><%= number_to_currency(@listing.price) %></strong> </div>
