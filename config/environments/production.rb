@@ -1,15 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('malimali'),
-    access_key_id: ENV.fetch('AKIAJ7IEZ74QUWZKGEQA'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('AWS_REGION'),
-  }
-}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -93,4 +84,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #this sets paperclip to upload images to amazon s3
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+    s3_region: ENV.fetch('AWS_REGION'),
+  }
+}
+
 end
