@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.6'
+ruby '2.3.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -10,7 +10,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -33,3 +32,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'paperclip'
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
+
+group :development, :test do
+  gem 'sqlite3'
+end
